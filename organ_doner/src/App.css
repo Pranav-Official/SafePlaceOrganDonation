@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+.App {
+  text-justify: auto;
+}
+div{
+  font-family: Inter;
+  font-weight: 400;
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
+a:visited{
+  color: #000000;
+}
+
+/*nav bar css*/
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .6em;
+  color: #000000;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.navbar-logo{
+  margin-left: 3rem;
+}
+
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  margin-right: 1rem;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navbar-item {
+  margin-left: 2rem;
+  margin-right: 1rem;
+  text-decoration: none;
+  color: #333333;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.log-but {
+  border: none;
+  padding: 0.6rem 2.8rem;
+  border-radius: 2rem;
+  background-color: #247DFF;
+  color: #FFFFFF;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-right: 2.5rem;
+}
+
+.log-but:hover {
+  background-color: #1152c2;
+}
+
+/*Hero section*/
+
+.hero {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: right;
+  height: 80vh;
+  z-index: 0;
+  padding: 0;
+}
+
+.hero-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0 10%;
+}
+
+.hero-heading {
+  font-size: 4.5rem;
+  font-weight: bold;
+  margin: 0;
+  font-weight: 900;
+}
+
+#hope{
+  color: #247DFF;
+}
+
+.hero-paragraph {
+  margin-top: 2rem;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons{
+  display: flex;
+  flex-direction: row;
+}
+
+.hero-buttons {
+  border: none;
+  border-radius: 0.5rem;
+  margin-right: 1rem;
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+
+.login-button {
+  border: none;
+  padding: 0.6rem 2.8rem;
+  border-radius: 2rem;
+  background-color: #247DFF;
+  color: #FFFFFF;
+  font-size: 1.7rem;
+  cursor: pointer;
+  margin-right: 2.5rem;
+}
+
+.login-button:hover {
+  background-color: #1152c2;
+}
+
+.how-it-works-button {
+  border: none;
+  padding: 0.6rem 2.8rem;
+  border-radius: 2rem;
+  background-color: #FFFFFF;
+  border-style: solid;
+  border-color: #247DFF;
+  border-width: 1px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.hero-png{
+  width: auto;
+  height: 90vh;
+  margin: 0;
+  padding: 0;
+  
+}
+
+

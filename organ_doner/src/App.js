@@ -1,7 +1,8 @@
 import logo from './MainLogo.png';
 import hero_doc from './hero-Doc.png';
 import './App.css';
-import './Login.js';
+import './Login';
+import LoginPage from './Login';
 
 function Navbar() {
   return (
@@ -50,9 +51,8 @@ function Hero() {
 
 function App() {
   return (
-    <div>
-      <Navbar />
-      <Hero />
+    <div className='App'>
+      <LoginPage />
     </div>
   );
 }

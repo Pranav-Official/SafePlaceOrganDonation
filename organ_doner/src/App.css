@@ -154,7 +154,7 @@ a:visited{
   
 }
 
-/* login page css */
+/* login page css donor login css*/
 .Login{
   display: flex;
   justify-content: space-between;
@@ -169,6 +169,8 @@ a:visited{
 .Login-Right{
   width: 50vw;
 }
+
+
 
 .login-logo{
   padding-top: 5rem;
@@ -292,3 +294,46 @@ a:visited{
   
 }
 
+/* login page css donor sign css*/
+
+.DonorSignUpBox{
+  background-color: #6693e0;
+  margin: 5rem;
+  margin-top: 0;
+  
+}
+
+.DonorSignUpBox h1{
+  font-size: 3rem;
+  
+}
+
+.SignUpGrid {
+  display: grid;
+  grid-template-columns: 40% 40%;
+  grid-gap: 2rem;
+}
+
+
+.SignUpGrid label input {
+  align-content: center;
+  justify-content: center;
+  background: #E2E2E2;
+  border-radius: 10px;
+  border-style: none;
+  height: 2rem;
+  margin-top: 0rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+  width: 80%;
+}
+
+.residential-address {
+  background-color: #000000;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.residential-address input {
+  width: 100%;
+}

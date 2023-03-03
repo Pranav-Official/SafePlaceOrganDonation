@@ -1,5 +1,9 @@
 import logo from './logowhite.png';
 import metamask_logo from './metamask-icon.svg'
+import DonorSignup from './Components/SignUps/DonorSignUp.js'
+
+
+
 
 function LoginPage() {
     return (
@@ -16,7 +20,7 @@ function LoginPage() {
         </div>
         <div className="Login-Right">
           <div><MiniNav /></div>
-          <div><LoginComponent /></div>
+          <div className='loginComponetSapce' ><DonorSignup /></div>
           
         </div>
       </section>
@@ -24,7 +28,7 @@ function LoginPage() {
   }
 
 
-function LoginComponent() {
+function LoginComponentDonor() {
   return (
     <div>
           

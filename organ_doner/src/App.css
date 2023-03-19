@@ -335,5 +335,5 @@ a:visited{
 }
 
 .residential-address input {
-  width: 100%;
+  width: max-content;
 }

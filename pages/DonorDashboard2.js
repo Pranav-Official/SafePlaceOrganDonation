@@ -4,7 +4,7 @@ import DonorMatch_NotFound from '../Components/DonorDashboard/DonorMatch_NotFoun
 import DonorMatch_Found from '../Components/DonorDashboard/DonorMatch_Found';
 import React, { useEffect, useState } from 'react';
 import { GetDonorDetailsFunction } from '../Components/BackendFunctions/BE_DonorFunctions';
-import { GetRecipientDetails, GetHospitalDetailsFunction } from '../Components/BackendFunctions/BE_HospitalFunctions';
+import { GetRecipientDetails, GetHospitalDetailsFunction, CheckIfDonorMatched,GetMatchDetails } from '../Components/BackendFunctions/BE_HospitalFunctions';
 
 let MatchFound = 0;
 
@@ -21,16 +21,33 @@ function DonorDashboardBody() {
       try {
         const donorData = await GetDonorDetailsFunction();
         setDonorData(donorData);
+        console.log("DONOR",donorData);
   
-        if (donorData && donorData[9] !== '0' && donorData[10] !== '0') {
-          setMatchFound(true);
-          const recipientData = await GetRecipientDetails(donorData[10]);
-          setRecipientData(recipientData);
-          console.log('RECIPIENT:', recipientData);
+        const check = await CheckIfDonorMatched( donorData[0] );
+        console.log("CHECK",check);
 
-          const hospitalData = await GetHospitalDetailsFunction(donorData[9]);
-          setHospitalData(hospitalData);
-          console.log('HOSPITAL:', hospitalData);
+        if (check) {
+          const matchDetails = await GetMatchDetails(check);
+          console.log("Match details",matchDetails);
+
+          const recipientDetails = await GetRecipientDetails(matchDetails[3]);
+          setRecipientData(recipientDetails);
+          console.log("Recipient Details ; ", recipientDetails);
+
+          const hospitalDetails = await GetHospitalDetailsFunction( matchDetails[5] );
+          setHospitalData(hospitalDetails);
+          console.log("Hsopital Details : ",hospitalDetails);
+
+          
+
+          setMatchFound(true);
+          // const recipientData = await GetRecipientDetails(donorData[10]);
+          
+          // console.log('RECIPIENT:', recipientData);
+
+          // const hospitalData = await GetHospitalDetailsFunction(donorData[9]);
+          
+          // console.log('HOSPITAL:', hospitalData);
         }
 
         setLoading(false);

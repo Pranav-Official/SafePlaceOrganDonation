@@ -76,24 +76,12 @@ export async function DonorSignUpFunction( firstname, lastname, contact, email, 
             web3 = new Web3(new Web3.providers.HttpProvider(RPC_URL));
             donorContract = new web3.eth.Contract(DonorContract.abi, DonorContract.address);
 
-            const transactionParameters = {
-                from: accounts[0],
-                to: DonorContract.address,
-                data: donorContract.methods.DonorLogin(
-                    email
-                ).encodeABI(),
-                gasPrice: '3000000000',
-            };
-
-            const transactionHash = await ethereum.request({
-                method: 'eth_sendTransaction',
-                params: [transactionParameters],
+            const result = await donorContract.methods.DonorLogin(email).call({
+                from: accounts[0]
             });
+            console.log("result",result);
 
-            const receipt = await web3.eth.getTransactionReceipt(transactionHash);
-
-            console.log("status: ",receipt.status);
-            if (receipt.status == "0x1"){
+            if (result){
                 console.log("Transaction Complete");
                 // Route to 'DonorDashboard2' page
                 Router.push('/DonorDashboard2');

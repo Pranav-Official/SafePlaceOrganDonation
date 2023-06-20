@@ -35,7 +35,7 @@ const RecipeintMatchDetails = ({ recipientData, hospitalData }) => {
       </div>
       <div className="slot">
         <div className="slot_icon"><img src={phoneHospital_icon} width="30" alt="phone hospital_icon" /></div>
-        <p className="slot_text">{recipientData[4]}</p>
+        <p className="slot_text">{hospitalData[4]}</p>
       </div>
     </>
   );
